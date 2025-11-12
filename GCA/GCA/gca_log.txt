@@ -1,0 +1,19 @@
+
+🚀 Iniciando GCA API...
+
+============================================================
+            🎯 GCA API - SISTEMA DE GERENCIAMENTO            
+============================================================
+📦 Módulos:                    ✅ Caixas, Arquivos, Segurados
+🔐 Autenticação:               ✅ Basic Auth
+💾 Banco de Dados:             ✅ MongoDB + JSON Backup
+🌐 API REST:                   ✅ Flask + CORS
+============================================================
+2025-11-12 13:39:09,031 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-12 13:39:09,031 - __main__ - INFO - ✅ Flask
+2025-11-12 13:39:09,032 - __main__ - INFO - ✅ Flask-CORS
+2025-11-12 13:39:09,038 - __main__ - ERROR - ❌ PyMongo
+2025-11-12 13:39:09,038 - __main__ - ERROR - 🚨 Dependências faltantes: PyMongo
+2025-11-12 13:39:09,038 - __main__ - ERROR - 🚨 Dependências faltantes. Instale com: pip install -r requirements.txt
+
+❌ Falha na inicialização da aplicação

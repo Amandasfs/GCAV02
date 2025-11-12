@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCA - Sistema de Gerenciamento</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .status-bar {
+            background: #f8f9fa;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .status-item {
+            text-align: center;
+        }
+
+        .status-item .label {
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+
+        .status-item .value {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .status-item .online {
+            color: #27ae60;
+        }
+
+        .status-item .offline {
+            color: #e74c3c;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #34495e;
+        }
+
+        .nav-tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            background: #2c3e50;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 1.1em;
+        }
+
+        .nav-tab:hover {
+            background: #34495e;
+        }
+
+        .nav-tab.active {
+            background: #3498db;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 30px;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .form-group input, .form-group select {
+            padding: 10px;
+            border: 2px solid #e9ecef;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: #2980b9;
+        }
+
+        .btn-success {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-success:hover:not(:disabled) {
+            background: #219a52;
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-danger:hover:not(:disabled) {
+            background: #c0392b;
+        }
+
+        .btn-warning {
+            background: #f39c12;
+            color: white;
+        }
+
+        .btn-warning:hover:not(:disabled) {
+            background: #d35400;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .table-container {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        th {
+            background: #34495e;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .actions-cell {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .message {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .message.warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+        }
+
+        .loading::after {
+            content: '...';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #3498db;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .refresh-info {
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9em;
+            margin: 10px 0;
+        }
+
+        .auto-refresh-toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .actions {
+                flex-direction: column;
+            }
+            
+            .nav-tabs {
+                flex-direction: column;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 10px 5px;
+            }
+            
+            .actions-cell {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cabeçalho -->
+        <div class="header">
+            <h1>🏢 GCA Sistema</h1>
+            <div class="subtitle">Sistema de Gerenciamento de Caixas e Arquivos</div>
+        </div>
+
+        <!-- Barra de Status -->
+        <div class="status-bar">
+            <div class="status-item">
+                <div class="label">Status API</div>
+                <div class="value online" id="api-status">🟢 ONLINE</div>
+            </div>
+            <div class="status-item">
+                <div class="label">MongoDB</div>
+                <div class="value" id="mongo-status">🟡 VERIFICANDO</div>
+            </div>
+            <div class="status-item">
+                <div class="label">JSON</div>
+                <div class="value" id="json-status">🟡 VERIFICANDO</div>
+            </div>
+            <div class="status-item">
+                <div class="label">Total Itens</div>
+                <div class="value" id="total-items">0</div>
+            </div>
+        </div>
+
+        <!-- Navegação por Abas -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="openTab('dashboard')">📊 Dashboard</button>
+            <button class="nav-tab" onclick="openTab('caixas')">📦 Caixas</button>
+            <button class="nav-tab" onclick="openTab('arquivos')">📁 Arquivos</button>
+            <button class="nav-tab" onclick="openTab('segurados')">👤 Segurados</button>
+        </div>
+
+        <!-- Conteúdo das Abas -->
+        <div id="dashboard" class="tab-content active">
+            <h2>📊 Dashboard do Sistema</h2>
+            
+            <div class="auto-refresh-toggle">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="auto-refresh" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+                <span>Atualização Automática</span>
+            </div>
+            
+            <div class="stats-grid" id="stats-grid">
+                <div class="loading">Carregando estatísticas</div>
+            </div>
+            
+            <div class="refresh-info" id="last-update">
+                Última atualização: <span id="update-time">--:--:--</span>
+            </div>
+            
+            <div class="actions">
+                <button class="btn btn-primary" onclick="loadStats(true)">🔄 Atualizar Agora</button>
+                <button class="btn btn-success" onclick="testAPI()">🧪 Testar API</button>
+                <button class="btn btn-warning" onclick="forcarAtualizacao()">⚡ Forçar Sync</button>
+                <button class="btn btn-danger" onclick="clearAllData()">🗑️ Limpar Tudo</button>
+            </div>
+        </div>
+
+        <div id="caixas" class="tab-content">
+            <h2>📦 Gerenciar Caixas</h2>
+            
+            <!-- Formulário de Caixa -->
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="caixa-codigo">Código da Caixa *</label>
+                    <input type="number" id="caixa-codigo" placeholder="Ex: 1001" required>
+                </div>
+                <div class="form-group">
+                    <label for="caixa-nbi">NBI *</label>
+                    <input type="number" id="caixa-nbi" placeholder="Número B.I." required>
+                </div>
+                <div class="form-group">
+                    <label for="caixa-nbf">NBF *</label>
+                    <input type="number" id="caixa-nbf" placeholder="Número B.F." required>
+                </div>
+                <div class="form-group">
+                    <label for="caixa-prateleira">Prateleira</label>
+                    <input type="text" id="caixa-prateleira" placeholder="Ex: A1">
+                </div>
+                <div class="form-group">
+                    <label for="caixa-bloco">Bloco</label>
+                    <input type="text" id="caixa-bloco" placeholder="Ex: B1">
+                </div>
+                <div class="form-group">
+                    <label for="caixa-andar">Andar</label>
+                    <input type="text" id="caixa-andar" placeholder="Ex: Térreo">
+                </div>
+                <div class="form-group">
+                    <label for="caixa-corredor">Corredor</label>
+                    <input type="text" id="caixa-corredor" placeholder="Ex: C1">
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-primary" onclick="criarCaixa()" id="btn-criar-caixa">➕ Criar Caixa</button>
+                <button class="btn btn-success" onclick="listarCaixas(true)">🔄 Listar Caixas</button>
+                <button class="btn btn-warning" onclick="limparFormCaixa()">🧹 Limpar</button>
+            </div>
+
+            <div id="message-caixas"></div>
+
+            <!-- Lista de Caixas -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>NBI</th>
+                            <th>NBF</th>
+                            <th>Localização</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-caixas">
+                        <tr>
+                            <td colspan="5" class="loading">Carregando caixas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="arquivos" class="tab-content">
+            <h2>📁 Gerenciar Arquivos</h2>
+            
+            <!-- Formulário de Arquivo -->
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="arquivo-nb">NB *</label>
+                    <input type="number" id="arquivo-nb" placeholder="Número do Arquivo" required>
+                </div>
+                <div class="form-group">
+                    <label for="arquivo-aps">APS *</label>
+                    <input type="text" id="arquivo-aps" placeholder="Código APS" required>
+                </div>
+                <div class="form-group">
+                    <label for="arquivo-seguradofk">CPF Segurado *</label>
+                    <input type="number" id="arquivo-seguradofk" placeholder="CPF do Segurado" required>
+                </div>
+                <div class="form-group">
+                    <label for="arquivo-tipo">Tipo *</label>
+                    <input type="number" id="arquivo-tipo" placeholder="Tipo (2 dígitos)" required min="0" max="99">
+                </div>
+                <div class="form-group">
+                    <label for="arquivo-caixa">Código da Caixa *</label>
+                    <input type="number" id="arquivo-caixa" placeholder="Código da Caixa" required>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-primary" onclick="criarArquivo()" id="btn-criar-arquivo">➕ Criar Arquivo</button>
+                <button class="btn btn-success" onclick="listarArquivos(true)">🔄 Listar Arquivos</button>
+                <button class="btn btn-warning" onclick="limparFormArquivo()">🧹 Limpar</button>
+            </div>
+
+            <div id="message-arquivos"></div>
+
+            <!-- Lista de Arquivos -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NB</th>
+                            <th>APS</th>
+                            <th>CPF Segurado</th>
+                            <th>Tipo</th>
+                            <th>Caixa</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-arquivos">
+                        <tr>
+                            <td colspan="6" class="loading">Carregando arquivos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="segurados" class="tab-content">
+            <h2>👤 Gerenciar Segurados</h2>
+            
+            <!-- Formulário de Segurado -->
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="segurado-nome">Nome *</label>
+                    <input type="text" id="segurado-nome" placeholder="Nome completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="segurado-cpf">CPF *</label>
+                    <input type="number" id="segurado-cpf" placeholder="CPF (apenas números)" required>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-primary" onclick="criarSegurado()" id="btn-criar-segurado">➕ Criar Segurado</button>
+                <button class="btn btn-success" onclick="listarSegurados(true)">🔄 Listar Segurados</button>
+                <button class="btn btn-warning" onclick="limparFormSegurado()">🧹 Limpar</button>
+            </div>
+
+            <div id="message-segurados"></div>
+
+            <!-- Lista de Segurados -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CPF</th>
+                            <th>Nome</th>
+                            <th>Arquivos</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-segurados">
+                        <tr>
+                            <td colspan="4" class="loading">Carregando segurados</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configurações da API
+        const API_BASE = 'http://localhost:5000/api';
+        const USERNAME = 'admin';
+        const PASSWORD = 'password';
+
+        // Headers de autenticação
+        const headers = {
+            'Content-Type': 'application/json',
+            'Authorization': 'Basic ' + btoa(USERNAME + ':' + PASSWORD)
+        };
+
+        // Estado da aplicação
+        let appState = {
+            currentTab: 'dashboard',
+            autoRefresh: true,
+            refreshInterval: null,
+            lastUpdate: null,
+            data: {
+                caixas: [],
+                arquivos: [],
+                segurados: []
+            }
+        };
+
+        // Funções de utilidade
+        function showMessage(elementId, message, type = 'success') {
+            const element = document.getElementById(elementId);
+            element.innerHTML = `<div class="message ${type}">${message}</div>`;
+            setTimeout(() => {
+                element.innerHTML = '';
+            }, 5000);
+        }
+
+        function setLoading(elementId, loading = true) {
+            const element = document.getElementById(elementId);
+            if (loading) {
+                element.innerHTML = '<div class="loading">Carregando</div>';
+            }
+        }
+
+        function formatTime(date) {
+            return date ? new Date(date).toLocaleTimeString('pt-BR') : '--:--:--';
+        }
+
+        function updateLastUpdateTime() {
+            const now = new Date();
+            appState.lastUpdate = now;
+            document.getElementById('update-time').textContent = formatTime(now);
+        }
+
+        // Controle de abas
+        function openTab(tabName) {
+            // Salvar a aba atual
+            appState.currentTab = tabName;
+            
+            // Esconder todas as abas
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Atualizar navegação
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Mostrar a aba selecionada
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+
+            // Carregar dados da aba se necessário
+            loadTabData(tabName);
+        }
+
+        function loadTabData(tabName) {
+            switch(tabName) {
+                case 'dashboard':
+                    loadStats();
+                    break;
+                case 'caixas':
+                    if (appState.data.caixas.length === 0) {
+                        listarCaixas();
+                    }
+                    break;
+                case 'arquivos':
+                    if (appState.data.arquivos.length === 0) {
+                        listarArquivos();
+                    }
+                    break;
+                case 'segurados':
+                    if (appState.data.segurados.length === 0) {
+                        listarSegurados();
+                    }
+                    break;
+            }
+        }
+
+        // Sistema de auto-refresh
+        function toggleAutoRefresh() {
+            appState.autoRefresh = document.getElementById('auto-refresh').checked;
+            
+            if (appState.autoRefresh) {
+                startAutoRefresh();
+            } else {
+                stopAutoRefresh();
+            }
+        }
+
+        function startAutoRefresh() {
+            if (appState.refreshInterval) {
+                clearInterval(appState.refreshInterval);
+            }
+            
+            appState.refreshInterval = setInterval(() => {
+                if (appState.currentTab === 'dashboard') {
+                    loadStats();
+                }
+            }, 10000); // Atualizar a cada 10 segundos
+        }
+
+        function stopAutoRefresh() {
+            if (appState.refreshInterval) {
+                clearInterval(appState.refreshInterval);
+                appState.refreshInterval = null;
+            }
+        }
+
+        // Funções para Caixas
+        async function criarCaixa() {
+            const btn = document.getElementById('btn-criar-caixa');
+            const originalText = btn.innerHTML;
+            
+            try {
+                btn.innerHTML = '⏳ Criando...';
+                btn.disabled = true;
+
+                const caixa = {
+                    codigo: parseInt(document.getElementById('caixa-codigo').value),
+                    NBI: parseInt(document.getElementById('caixa-nbi').value),
+                    NBF: parseInt(document.getElementById('caixa-nbf').value),
+                    prateleira: document.getElementById('caixa-prateleira').value,
+                    bloco: document.getElementById('caixa-bloco').value,
+                    andar: document.getElementById('caixa-andar').value,
+                    corredor: document.getElementById('caixa-corredor').value
+                };
+
+                // Validação básica
+                if (!caixa.codigo || !caixa.NBI || !caixa.NBF) {
+                    throw new Error('Código, NBI e NBF são obrigatórios');
+                }
+
+                const response = await fetch(API_BASE + '/caixas', {
+                    method: 'POST',
+                    headers: headers,
+                    body: JSON.stringify(caixa)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showMessage('message-caixas', '✅ Caixa criada com sucesso!');
+                    limparFormCaixa();
+                    await listarCaixas(true); // Forçar recarregamento
+                    if (appState.currentTab === 'dashboard') {
+                        loadStats();
+                    }
+                } else {
+                    throw new Error(data.erro || 'Erro desconhecido');
+                }
+            } catch (error) {
+                console.error('Erro ao criar caixa:', error);
+                showMessage('message-caixas', `❌ Erro: ${error.message}`, 'error');
+            } finally {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        }
+
+        async function listarCaixas(forceRefresh = false) {
+            try {
+                setLoading('lista-caixas', true);
+
+                const response = await fetch(API_BASE + '/caixas', {
+                    headers: headers
+                });
+
+                if (response.ok) {
+                    const caixas = await response.json();
+                    appState.data.caixas = caixas;
+                    renderCaixas(caixas);
+                    updateLastUpdateTime();
+                } else {
+                    throw new Error('Falha ao carregar caixas');
+                }
+            } catch (error) {
+                console.error('Erro ao listar caixas:', error);
+                document.getElementById('lista-caixas').innerHTML = 
+                    '<tr><td colspan="5" class="message error">❌ Erro ao carregar caixas</td></tr>';
+            }
+        }
+
+        function renderCaixas(caixas) {
+            const tbody = document.getElementById('lista-caixas');
+            
+            if (caixas.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" class="loading">Nenhuma caixa cadastrada</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = caixas.map(caixa => `
+                <tr>
+                    <td>${caixa.codigo}</td>
+                    <td>${caixa.NBI}</td>
+                    <td>${caixa.NBF}</td>
+                    <td>${caixa.prateleira || '-'}/${caixa.bloco || '-'}/${caixa.andar || '-'}</td>
+                    <td class="actions-cell">
+                        <button class="action-btn btn-warning" onclick="editarCaixa(${caixa.codigo})">✏️</button>
+                        <button class="action-btn btn-danger" onclick="deletarCaixa(${caixa.codigo})">🗑️</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        async function deletarCaixa(codigo) {
+            if (!confirm(`Tem certeza que deseja deletar a caixa ${codigo}?`)) return;
+
+            try {
+                const response = await fetch(API_BASE + '/caixas/' + codigo, {
+                    method: 'DELETE',
+                    headers: headers
+                });
+
+                if (response.ok) {
+                    showMessage('message-caixas', '✅ Caixa deletada com sucesso!');
+                    await listarCaixas(true);
+                    if (appState.currentTab === 'dashboard') {
+                        loadStats();
+                    }
+                } else {
+                    throw new Error('Falha ao deletar caixa');
+                }
+            } catch (error) {
+                console.error('Erro ao deletar caixa:', error);
+                showMessage('message-caixas', `❌ Erro ao deletar caixa: ${error.message}`, 'error');
+            }
+        }
+
+        function limparFormCaixa() {
+            document.getElementById('caixa-codigo').value = '';
+            document.getElementById('caixa-nbi').value = '';
+            document.getElementById('caixa-nbf').value = '';
+            document.getElementById('caixa-prateleira').value = '';
+            document.getElementById('caixa-bloco').value = '';
+            document.getElementById('caixa-andar').value = '';
+            document.getElementById('caixa-corredor').value = '';
+        }
+
+        // Funções para Arquivos (padrão similar)
+        async function criarArquivo() {
+            const btn = document.getElementById('btn-criar-arquivo');
+            const originalText = btn.innerHTML;
+            
+            try {
+                btn.innerHTML = '⏳ Criando...';
+                btn.disabled = true;
+
+                const arquivo = {
+                    NB: parseInt(document.getElementById('arquivo-nb').value),
+                    APS: document.getElementById('arquivo-aps').value,
+                    SeguradoFK: parseInt(document.getElementById('arquivo-seguradofk').value),
+                    Tipo: parseInt(document.getElementById('arquivo-tipo').value),
+                    Caixa_codigo: parseInt(document.getElementById('arquivo-caixa').value)
+                };
+
+                // Validação básica
+                if (!arquivo.NB || !arquivo.APS || !arquivo.SeguradoFK || !arquivo.Tipo || !arquivo.Caixa_codigo) {
+                    throw new Error('Todos os campos são obrigatórios');
+                }
+
+                const response = await fetch(API_BASE + '/arquivos', {
+                    method: 'POST',
+                    headers: headers,
+                    body: JSON.stringify(arquivo)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showMessage('message-arquivos', '✅ Arquivo criado com sucesso!');
+                    limparFormArquivo();
+                    await listarArquivos(true);
+                    if (appState.currentTab === 'dashboard') {
+                        loadStats();
+                    }
+                } else {
+                    throw new Error(data.erro || 'Erro desconhecido');
+                }
+            } catch (error) {
+                console.error('Erro ao criar arquivo:', error);
+                showMessage('message-arquivos', `❌ Erro: ${error.message}`, 'error');
+            } finally {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        }
+
+        async function listarArquivos(forceRefresh = false) {
+            try {
+                setLoading('lista-arquivos', true);
+
+                const response = await fetch(API_BASE + '/arquivos', {
+                    headers: headers
+                });
+
+                if (response.ok) {
+                    const arquivos = await response.json();
+                    appState.data.arquivos = arquivos;
+                    renderArquivos(arquivos);
+                    updateLastUpdateTime();
+                } else {
+                    throw new Error('Falha ao carregar arquivos');
+                }
+            } catch (error) {
+                console.error('Erro ao listar arquivos:', error);
+                document.getElementById('lista-arquivos').innerHTML = 
+                    '<tr><td colspan="6" class="message error">❌ Erro ao carregar arquivos</td></tr>';
+            }
+        }
+
+        function renderArquivos(arquivos) {
+            const tbody = document.getElementById('lista-arquivos');
+            
+            if (arquivos.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" class="loading">Nenhum arquivo cadastrado</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = arquivos.map(arquivo => `
+                <tr>
+                    <td>${arquivo.NB}</td>
+                    <td>${arquivo.APS}</td>
+                    <td>${arquivo.SeguradoFK}</td>
+                    <td>${arquivo.Tipo}</td>
+                    <td>${arquivo.Caixa_codigo}</td>
+                    <td class="actions-cell">
+                        <button class="action-btn btn-warning" onclick="editarArquivo(${arquivo.NB})">✏️</button>
+                        <button class="action-btn btn-danger" onclick="deletarArquivo(${arquivo.NB})">🗑️</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        async function deletarArquivo(nb) {
+            if (!confirm(`Tem certeza que deseja deletar o arquivo ${nb}?`)) return;
+
+            try {
+                const response = await fetch(API_BASE + '/arquivos/' + nb, {
+                    method: 'DELETE',
+                    headers: headers
+                });
+
+                if (response.ok) {
+                    showMessage('message-arquivos', '✅ Arquivo deletado com sucesso!');
+                    await listarArquivos(true);
+                    if (appState.currentTab === 'dashboard') {
+                        loadStats();
+                    }
+                } else {
+                    throw new Error('Falha ao deletar arquivo');
+                }
+            } catch (error) {
+                console.error('Erro ao deletar arquivo:', error);
+                showMessage('message-arquivos', `❌ Erro ao deletar arquivo: ${error.message}`, 'error');
+            }
+        }
+
+        function limparFormArquivo() {
+            document.getElementById('arquivo-nb').value = '';
+            document.getElementById('arquivo-aps').value = '';
+            document.getElementById('arquivo-seguradofk').value = '';
+            document.getElementById('arquivo-tipo').value = '';
+            document.getElementById('arquivo-caixa').value = '';
+        }
+
+        // Funções para Segurados (padrão similar)
+        async function criarSegurado() {
+            const btn = document.getElementById('btn-criar-segurado');
+            const originalText = btn.innerHTML;
+            
+            try {
+                btn.innerHTML = '⏳ Criando...';
+                btn.disabled = true;
+
+                const segurado = {
+                    Nome: document.getElementById('segurado-nome').value,
+                    cpf: parseInt(document.getElementById('segurado-cpf').value)
+                };
+
+                // Validação básica
+                if (!segurado.Nome || !segurado.cpf) {
+                    throw new Error('Nome e CPF são obrigatórios');
+                }
+
+                const response = await fetch(API_BASE + '/segurados', {
+                    method: 'POST',
+                    headers: headers,
+                    body: JSON.stringify(segurado)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    showMessage('message-segurados', '✅ Segurado criado com sucesso!');
+                    limparFormSegurado();
+                    await listarSegurados(true);
+                    if (appState.currentTab === 'dashboard') {
+                        loadStats();
+                    }
+                } else {
+                    throw new Error(data.erro || 'Erro desconhecido');
+                }
+            } catch (error) {
+                console.error('Erro ao criar segurado:', error);
+                showMessage('message-segurados', `❌ Erro: ${error.message}`, 'error');
+            } finally {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
+        }
+
+        async function listarSegurados(forceRefresh = false) {
+            try {
+                setLoading('lista-segurados', true);
+
+                const response = await fetch(API_BASE + '/segurados', {
+                    headers: headers
+                });
+
+                if (response.ok) {
+                    const segurados = await response.json();
+                    appState.data.segurados = segurados;
+                    renderSegurados(segurados);
+                    updateLastUpdateTime();
+                } else {
+                    throw new Error('Falha ao carregar segurados');
+                }
+            } catch (error) {
+                console.error('Erro ao listar segurados:', error);
+                document.getElementById('lista-segurados').innerHTML = 
+                    '<tr><td colspan="4" class="message error">❌ Erro ao carregar segurados</td></tr>';
+            }
+        }
+
+        function renderSegurados(segurados) {
+            const tbody = document.getElementById('lista-segurados');
+            
+            if (segurados.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" class="loading">Nenhum segurado cadastrado</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = segurados.map(segurado => `
+                <tr>
+                    <td>${segurado.cpf}</td>
+                    <td>${segurado.Nome}</td>
+                    <td>${segurado.Arquivos ? segurado.Arquivos.length : 0}</td>
+                    <td class="actions-cell">
+                        <button class="action-btn btn-warning" onclick="editarSegurado(${segurado.cpf})">✏️</button>
+                        <button class="action-btn btn-danger" onclick="deletarSegurado(${segurado.cpf})">🗑️</button>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        async function deletarSegurado(cpf) {
+            if (!confirm(`Tem certeza que deseja deletar o segurado ${cpf}?`)) return;
+
+            try {
+                const response = await fetch(API_BASE + '/segurados/' + cpf, {
+                    method: 'DELETE',
+                    headers: headers
+                });
+
+                if (response.ok) {
+                    showMessage('message-segurados', '✅ Segurado deletado com sucesso!');
+                    await listarSegurados(true);
+                    if (appState.currentTab === 'dashboard') {
+                        loadStats();
+                    }
+                } else {
+                    throw new Error('Falha ao deletar segurado');
+                }
+            } catch (error) {
+                console.error('Erro ao deletar segurado:', error);
+                showMessage('message-segurados', `❌ Erro ao deletar segurado: ${error.message}`, 'error');
+            }
+        }
+
+        function limparFormSegurado() {
+            document.getElementById('segurado-nome').value = '';
+            document.getElementById('segurado-cpf').value = '';
+        }
+
+        // Funções do Dashboard
+        async function loadStats(force = false) {
+            try {
+                if (force) {
+                    setLoading('stats-grid', true);
+                }
+
+                const response = await fetch(API_BASE + '/info', {
+                    headers: headers
+                });
+
+                if (response.ok) {
+                    const info = await response.json();
+                    renderStats(info);
+                    updateLastUpdateTime();
+                    
+                    // Atualizar status
+                    document.getElementById('mongo-status').textContent = 
+                        info.status_banco_dados.mongodb ? '🟢 ONLINE' : '🔴 OFFLINE';
+                    document.getElementById('json-status').textContent = 
+                        info.status_banco_dados.json ? '🟢 ONLINE' : '🔴 OFFLINE';
+                    
+                    const total = info.estatisticas.caixas + info.estatisticas.arquivos + info.estatisticas.segurados;
+                    document.getElementById('total-items').textContent = total;
+                } else {
+                    throw new Error('Falha ao carregar estatísticas');
+                }
+            } catch (error) {
+                console.error('Erro ao carregar estatísticas:', error);
+                document.getElementById('stats-grid').innerHTML = 
+                    '<div class="message error">❌ Erro ao carregar estatísticas</div>';
+            }
+        }
+
+        function renderStats(info) {
+            const statsGrid = document.getElementById('stats-grid');
+            
+            statsGrid.innerHTML = `
+                <div class="stat-card">
+                    <h3>📦 Caixas</h3>
+                    <div class="number">${info.estatisticas.caixas}</div>
+                </div>
+                <div class="stat-card">
+                    <h3>📁 Arquivos</h3>
+                    <div class="number">${info.estatisticas.arquivos}</div>
+                </div>
+                <div class="stat-card">
+                    <h3>👤 Segurados</h3>
+                    <div class="number">${info.estatisticas.segurados}</div>
+                </div>
+                <div class="stat-card">
+                    <h3>🕐 Uptime</h3>
+                    <div class="number" style="font-size: 1.2em">${info.uptime}</div>
+                </div>
+            `;
+        }
+
+        async function testAPI() {
+            try {
+                const response = await fetch(API_BASE + '/health');
+                if (response.ok) {
+                    showMessage('message-caixas', '✅ API está funcionando corretamente!');
+                } else {
+                    throw new Error('API retornou erro');
+                }
+            } catch (error) {
+                showMessage('message-caixas', '❌ API não está respondendo!', 'error');
+            }
+        }
+
+        async function forcarAtualizacao() {
+            try {
+                const response = await fetch(API_BASE + '/refresh', {
+                    method: 'POST',
+                    headers: headers
+                });
+
+                if (response.ok) {
+                    showMessage('message-caixas', '✅ Sincronização forçada com sucesso!');
+                    // Recarregar dados atuais
+                    if (appState.currentTab === 'dashboard') {
+                        loadStats(true);
+                    } else {
+                        loadTabData(appState.currentTab);
+                    }
+                }
+            } catch (error) {
+                showMessage('message-caixas', '❌ Erro na sincronização', 'error');
+            }
+        }
+
+        async function clearAllData() {
+            if (!confirm('⚠️ ATENÇÃO: Isso irá deletar TODOS os dados! Tem certeza?')) return;
+            
+            try {
+                const response = await fetch(API_BASE + '/limpar', {
+                    method: 'POST',
+                    headers: headers
+                });
+
+                if (response.ok) {
+                    showMessage('message-caixas', '✅ Todos os dados foram limpos com sucesso!');
+                    // Limpar estado local
+                    appState.data = { caixas: [], arquivos: [], segurados: [] };
+                    // Recarregar tudo
+                    loadStats(true);
+                    listarCaixas(true);
+                    listarArquivos(true);
+                    listarSegurados(true);
+                } else {
+                    throw new Error('Falha ao limpar dados');
+                }
+            } catch (error) {
+                showMessage('message-caixas', '❌ Erro ao limpar dados', 'error');
+            }
+        }
+
+        // Funções de edição (para implementar)
+        function editarCaixa(codigo) {
+            alert(`Editar caixa ${codigo} - Funcionalidade em desenvolvimento`);
+            // Aqui você pode implementar a lógica de edição
+        }
+
+        function editarArquivo(nb) {
+            alert(`Editar arquivo ${nb} - Funcionalidade em desenvolvimento`);
+            // Aqui você pode implementar a lógica de edição
+        }
+
+        function editarSegurado(cpf) {
+            alert(`Editar segurado ${cpf} - Funcionalidade em desenvolvimento`);
+            // Aqui você pode implementar a lógica de edição
+        }
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configurar evento do toggle
+            document.getElementById('auto-refresh').addEventListener('change', toggleAutoRefresh);
+            
+            // Carregar dados iniciais
+            loadStats();
+            listarCaixas();
+            
+            // Verificar status da API
+            fetch(API_BASE + '/health')
+                .then(response => {
+                    if (response.ok) {
+                        document.getElementById('api-status').textContent = '🟢 ONLINE';
+                        // Iniciar auto-refresh se a API estiver online
+                        startAutoRefresh();
+                    } else {
+                        document.getElementById('api-status').textContent = '🔴 OFFLINE';
+                    }
+                })
+                .catch(() => {
+                    document.getElementById('api-status').textContent = '🔴 OFFLINE';
+                });
+
+            // Atualizar hora inicial
+            updateLastUpdateTime();
+        });
+
+        // Parar auto-refresh quando a página não estiver visível
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                stopAutoRefresh();
+            } else if (appState.autoRefresh) {
+                startAutoRefresh();
+            }
+        });
+    </script>
+</body>
+</html>
