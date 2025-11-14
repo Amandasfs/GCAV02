@@ -1,35 +1,23 @@
 {
-  "caixas": [
+  "caixas": [],
+  "arquivos": [
     {
-      "codigo": 111111,
-      "NBI": 111111,
-      "NBF": 1111,
-      "prateleira": "1111",
-      "bloco": "a",
-      "andar": "1",
-      "corredor": "1",
-      "data_criacao": "2025-11-12T15:45:17.614965",
-      "data_atualizacao": "2025-11-12T15:45:17.614958",
-      "id": "1762973117_9a90cfc7"
+      "NB": 1111,
+      "APS": "111",
+      "SeguradoFK": 111,
+      "Tipo": 11,
+      "Caixa_codigo": 11111,
+      "id": "887586c3-c874-4f8c-a05b-6fd79b5718e9",
+      "criado_em": "2025-11-14T11:42:54.029986"
     }
   ],
-  "arquivos": [],
-  "segurados": [
-    {
-      "Nome": "DUDU",
-      "cpf": 1111111111111,
-      "Arquivos": [],
-      "data_criacao": "2025-11-12T15:28:13.243181",
-      "data_atualizacao": "2025-11-12T15:28:13.243176",
-      "id": "1762972093_199f5f56"
-    }
-  ],
+  "segurados": [],
   "metadata": {
-    "criado_em": "2025-11-12T14:59:55.559080",
-    "ultima_atualizacao": "2025-11-12T15:45:17.614972",
-    "total_caixas": 1,
-    "total_arquivos": 0,
-    "total_segurados": 1,
+    "criado_em": "2025-11-13T11:56:41.926654",
+    "ultima_atualizacao": "2025-11-14T11:42:54.030013",
+    "total_caixas": 0,
+    "total_arquivos": 1,
+    "total_segurados": 0,
     "proximo_id": 1
   }
 }
