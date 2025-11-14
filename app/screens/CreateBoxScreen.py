@@ -1,11 +1,13 @@
+# File: app/screens/CreateBoxScreen.py
 import tkinter as tk
 from tkinter import ttk, messagebox
 from PIL import Image, ImageTk
 
 
 class CreateBoxScreen:
-    def __init__(self, root):
+    def __init__(self, root, api):
         self.root = root
+        self.api = api  # API passada do main
         self.root.title("Cadastrar Caixa")
         self.root.geometry("403x304")
         self.root.configure(bg="white")
@@ -98,33 +100,48 @@ class CreateBoxScreen:
             lbl_close.place(x=361, y=14)
             lbl_close.bind("<Button-1>", lambda e: self.handle_close())
 
-    # --- Função de cadastro ---
+    # --- Função de cadastro com API ---
     def cadastrar_caixa(self):
         dados = {
-            "Código": self.cod_caixa.get(),
-            "Bloco": self.bloco.get(),
-            "Rua": self.rua.get(),
-            "Prateleira": self.prateleira.get(),
-            "NB Inicial": self.nb_inicial.get(),
-            "NB Final": self.nb_final.get(),
-            "Andar": self.andar_var.get()
+            "codigo": self.cod_caixa.get().strip(),
+            "bloco": self.bloco.get().strip(),
+            "rua": self.rua.get().strip(),
+            "prateleira": self.prateleira.get().strip(),
+            "nb_inicial": self.nb_inicial.get().strip(),
+            "nb_final": self.nb_final.get().strip(),
+            "andar": self.andar_var.get().strip()
         }
 
-        if not dados["Código"] or dados["Código"] == "Código da Caixa":
+        # Validações
+        if not dados["codigo"] or dados["codigo"] == "Código da Caixa":
             messagebox.showwarning("Aviso", "Informe o código da caixa.")
             return
-        if dados["Andar"] == "Andar":
+        if dados["andar"] == "Andar":
             messagebox.showwarning("Aviso", "Selecione o andar.")
             return
 
-        info = "\n".join([f"{k}: {v}" for k, v in dados.items()])
-        messagebox.showinfo("Caixa cadastrada!", f"Dados salvos com sucesso:\n\n{info}")
+        try:
+            # Chama a API
+            resposta = self.api.criar_caixa(dados)
+            if resposta["sucesso"]:
+                messagebox.showinfo("Sucesso", "Caixa cadastrada com sucesso!")
+                self.handle_close()
+            else:
+                messagebox.showerror("Erro", f"Falha ao cadastrar caixa:\n{resposta['mensagem']}")
+        except Exception as e:
+            messagebox.showerror("Erro", f"Ocorreu um erro ao conectar com a API:\n{e}")
 
     def handle_close(self):
         self.root.destroy()
 
 
 if __name__ == "__main__":
+    # Apenas para teste isolado
+    class DummyAPI:
+        def criar_caixa(self, dados):
+            print("Chamando API com:", dados)
+            return {"sucesso": True, "mensagem": "OK"}
+
     root = tk.Tk()
-    app = CreateBoxScreen(root)
+    app = CreateBoxScreen(root, api=DummyAPI())
     root.mainloop()

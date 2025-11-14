@@ -1,3 +1,4 @@
+# app/models/segurado.py
 from datetime import datetime
 
 class Segurado:

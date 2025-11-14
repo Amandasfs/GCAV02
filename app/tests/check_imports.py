@@ -1,3 +1,4 @@
+# File: app/tests/check_imports.py
 #!/usr/bin/env python3
 
 def test_imports():

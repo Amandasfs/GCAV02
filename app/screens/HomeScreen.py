@@ -1,47 +1,61 @@
+# File: app/screens/HomeScreen.py
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
 import os
 from PIL import Image, ImageTk
 
-# Importa suas telas de cadastro/alteração
 from screens.CreateBoxScreen import CreateBoxScreen
 from screens.SelectCadArqScreen import SelectCadArqScreen
 from screens.SelectAltArqScreen import SelectAltArqScreen
 from screens.SelectAltCaixScreen import SelectAltCaixScreen
 
+# Map de tipo de benefício (numerico para texto)
+TIPO_BENEFICIO_MAP = {
+    1: "Aposentadoria",
+    2: "Pensão",
+    3: "Auxílio",
+    4: "Outros"
+}
+
 
 class HomeScreen:
     def __init__(self, root, api):
         self.root = root
-        self.api = api  # API do GCAApp
-        self.root.overrideredirect(True)  # remove toolbar do sistema
+        self.api = api
+
+        # Remove barra do sistema
+        self.root.overrideredirect(True)
+
+        # Cor do fundo
         self.root.configure(bg="#044793")
 
-        # Centraliza a janela e ocupa boa parte da tela
-        w_tela = self.root.winfo_screenwidth()
-        h_tela = self.root.winfo_screenheight()
-        largura = int(w_tela * 0.85)
-        altura = int(h_tela * 0.85)
-        x = (w_tela - largura) // 2
-        y = (h_tela - altura) // 2
-        self.root.geometry(f"{largura}x{altura}+{x}+{y}")
+        # Maximiza automaticamente
+        self.root.state("zoomed")
 
-        # Cria gradiente de fundo
-        self.canvas_bg = tk.Canvas(self.root, highlightthickness=0)
-        self.canvas_bg.pack(fill="both", expand=True)
-        self._desenhar_gradiente(self.canvas_bg, "#044793", "#0277BD")
+        # Movimentação
+        self.offset_x = 0
+        self.offset_y = 0
+        self.root.bind("<Button-1>", self._get_pos)
+        self.root.bind("<B1-Motion>", self._move_window)
+
+        # Canvas para gradiente
+        self.canvas_bg = tk.Canvas(self.root, highlightthickness=0, bd=0)
+        self.canvas_bg.place(relx=0, rely=0, relwidth=1, relheight=1)
+        self.canvas_bg.bind("<Configure>", self._redesenhar_gradiente)
 
         # Frame principal
-        self.frame_principal = tk.Frame(self.canvas_bg, bg="#044793", padx=20, pady=20)
-        self.canvas_bg.create_window((0, 0), window=self.frame_principal, anchor="nw")
+        self.frame_principal = tk.Frame(self.canvas_bg, bg="#044793")
+        self.canvas_bg.create_window(0, 0, anchor="nw", window=self.frame_principal)
+        self.frame_principal.pack(fill="both", expand=True)
 
-        # CABEÇALHO
-        header = tk.Frame(self.frame_principal, bg="#0B305A", pady=10)
-        header.pack(fill="x", pady=(0, 15))
+        # ================= CABEÇALHO =====================
+        header = tk.Frame(self.frame_principal, bg="#0B305A", height=70)
+        header.pack(fill="x")
+        header.pack_propagate(False)
 
-        self.logo = self._carregar_imagem("img/logoBranco.png", (120, 45))
+        self.logo = self._carregar_imagem("img/logoBranco.png", (150, 55))
         if self.logo:
-            tk.Label(header, image=self.logo, bg="#0B305A").pack(side="left", padx=(15, 10))
+            tk.Label(header, image=self.logo, bg="#0B305A").pack(side="left", padx=20)
 
         tk.Label(
             header,
@@ -51,14 +65,14 @@ class HomeScreen:
             font=("Arial", 24, "bold")
         ).pack(side="left")
 
-        self.close_img = self._carregar_imagem("img/closeBranco.png", (25, 25))
+        self.close_img = self._carregar_imagem("img/closeBranco.png", (30, 30))
         close_btn = tk.Label(header, image=self.close_img, bg="#0B305A", cursor="hand2")
-        close_btn.pack(side="right", padx=15)
+        close_btn.pack(side="right", padx=20)
         close_btn.bind("<Button-1>", lambda e: self.root.destroy())
 
-        # ÁREA DE BUSCA
+        # ================= ÁREA DE BUSCA =====================
         busca_frame = tk.Frame(self.frame_principal, bg="#044793", pady=10)
-        busca_frame.pack(fill="x", padx=20, pady=(10, 15))
+        busca_frame.pack(fill="x", padx=25, pady=(20, 10))
 
         tk.Label(
             busca_frame,
@@ -71,88 +85,148 @@ class HomeScreen:
         filtros_frame = tk.Frame(busca_frame, bg="#044793")
         filtros_frame.pack(fill="x")
 
-        self.filtro = ttk.Combobox(filtros_frame, values=["Servidor", "Caixa", "Arquivo"], font=("Arial", 12))
+        self.filtro = ttk.Combobox(
+            filtros_frame,
+            values=["Servidor", "Caixa", "Arquivo"],
+            font=("Arial", 12)
+        )
         self.filtro.set("Escolha um filtro")
         self.filtro.pack(side="left", padx=5, ipadx=10, ipady=5, fill="x", expand=True)
 
         self.busca_entry = ttk.Entry(filtros_frame, font=("Arial", 12))
         self.busca_entry.pack(side="left", padx=5, ipadx=10, ipady=5, fill="x", expand=True)
 
-        ttk.Button(filtros_frame, text="BUSCAR", width=12).pack(side="left", padx=5)
-        ttk.Button(filtros_frame, text="BUSCAR TODAS", width=15).pack(side="left", padx=5)
+        ttk.Button(filtros_frame, text="BUSCAR", width=12, command=self.buscar).pack(side="left", padx=5)
+        ttk.Button(filtros_frame, text="BUSCAR TODAS", width=15, command=self.buscar_todas).pack(side="left", padx=5)
 
-        # ÁREA PRINCIPAL (Tabela + Painel lateral)
-        corpo = tk.Frame(self.frame_principal, bg="#044793", pady=10)
-        corpo.pack(fill="both", expand=True, padx=10, pady=(10, 20))
+        # ========== CORPO PRINCIPAL (TABELA + PAINEL) ==========
+        corpo = tk.Frame(self.frame_principal, bg="#044793")
+        corpo.pack(fill="both", expand=True, padx=10, pady=15)
 
-        # TABELA
-        colunas = ["Coluna 1", "Coluna 2", "Coluna 3", "Coluna 4", "Caixa", "Andar", "Bloco", "Rua", "Prateleira"]
+        # TABELA inicial
+        colunas = ["Coluna 1", "Coluna 2", "Coluna 3",
+                   "Coluna 4", "Caixa", "Andar", "Bloco",
+                   "Rua", "Prateleira"]
         self.tabela = ttk.Treeview(corpo, columns=colunas, show="headings")
         for c in colunas:
             self.tabela.heading(c, text=c)
-            self.tabela.column(c, width=100, anchor="center")
-        self.tabela.pack(side="left", fill="both", expand=True, padx=5, pady=5)
+            self.tabela.column(c, anchor="center", stretch=True)
 
-        # PAINEL LATERAL
-        painel = tk.Frame(corpo, bg="#0B305A", width=200, pady=15, padx=10)
-        painel.pack(side="right", fill="y")
+        tabela_scroll = ttk.Scrollbar(corpo, orient="vertical", command=self.tabela.yview)
+        self.tabela.configure(yscroll=tabela_scroll.set)
+        self.tabela.pack(side="left", fill="both", expand=True)
+        tabela_scroll.pack(side="left", fill="y")
 
-        # Integração dos fluxos de tela usando callbacks do GCAApp
+        # Painel lateral
+        painel = tk.Frame(corpo, bg="#0B305A", width=240)
+        painel.pack(side="right", fill="y", padx=10)
+        painel.pack_propagate(False)
+
         self._add_painel_item(painel, "img/caixa/caixaADD.png", "CADASTRAR CAIXA", self.abrir_create_box)
         self._add_painel_item(painel, "img/caixa/caixaALT.png", "ALTERAR CAIXA", self.abrir_update_box)
         self._add_painel_item(painel, "img/arquivo/arquivoADD.png", "CADASTRAR ARQUIVO", self.abrir_select_box_create_file)
         self._add_painel_item(painel, "img/arquivo/arquivoALT.png", "ALTERAR ARQUIVO", self.abrir_update_file)
-        self._add_painel_item(painel, "img/relatorio.png", "RELATÓRIO")  # opcional
+        self._add_painel_item(painel, "img/relatorio.png", "RELATÓRIO")
 
-        # Responsividade: atualizar gradiente ao redimensionar
-        self.canvas_bg.bind("<Configure>", self._redesenhar_gradiente)
+    # ================== FUNÇÕES DE BUSCA ==========================
+    def buscar(self):
+        filtro = self.filtro.get()
+        termo = self.busca_entry.get().strip()
 
-    # Função corrigida para carregar imagem
+        if filtro == "Servidor":
+            resultados = self.api.buscar_por_cpf_ou_nome(termo)
+            colunas = ["Nome", "Arquivos", "Tipo", "Caixa", "Andar", "Bloco", "Corredor", "Prateleira"]
+            self._preencher_tabela(resultados, colunas, map_tipo=True)
+
+        elif filtro == "Arquivo":
+            resultados = self.api.buscar_arquivo(termo)
+            colunas = ["Segurado", "Tipo", "Caixa", "Andar", "Bloco", "Corredor", "Prateleira"]
+            self._preencher_tabela(resultados, colunas, map_tipo=True)
+
+        elif filtro == "Caixa":
+            resultados = self.api.buscar_caixa(termo)
+            colunas = ["NB Inicial", "NB Final", "Bloco", "Andar", "Corredor", "Prateleira"]
+            self._preencher_tabela(resultados, colunas)
+
+        else:
+            messagebox.showwarning("Aviso", "Escolha um filtro válido.")
+
+    def buscar_todas(self):
+        resultados = self.api.buscar_todas_caixas()
+        resultados = sorted(resultados, key=lambda x: int(x.get("codigo", 0)))
+        colunas = ["Caixa", "NB Inicial", "NB Final", "Bloco", "Andar", "Corredor", "Prateleira"]
+        self._preencher_tabela(resultados, colunas)
+
+    def _preencher_tabela(self, resultados, colunas, map_tipo=False):
+        self.tabela["columns"] = colunas
+        for c in colunas:
+            self.tabela.heading(c, text=c)
+            self.tabela.column(c, anchor="center", stretch=True)
+
+        self.tabela.delete(*self.tabela.get_children())
+        for r in resultados:
+            valores = []
+            for c in colunas:
+                key = c.lower().replace(" ", "_")
+                val = r.get(key, "")
+                if map_tipo and c.lower() == "tipo":
+                    val = TIPO_BENEFICIO_MAP.get(val, val)
+                valores.append(val)
+            self.tabela.insert("", "end", values=valores)
+
+    # ================== RESTANTE DO CÓDIGO ==========================
+    def _get_pos(self, event):
+        self.offset_x = event.x
+        self.offset_y = event.y
+
+    def _move_window(self, event):
+        x = event.x_root - self.offset_x
+        y = event.y_root - self.offset_y
+        self.root.geometry(f"+{x}+{y}")
+
     def _carregar_imagem(self, caminho, tamanho):
         try:
             base_path = os.path.dirname(os.path.abspath(__file__))
             caminho_completo = os.path.join(base_path, caminho)
-            img = Image.open(caminho_completo)
-            img = img.resize(tamanho, Image.LANCZOS)
+            img = Image.open(caminho_completo).resize(tamanho, Image.LANCZOS)
             return ImageTk.PhotoImage(img)
         except Exception as e:
-            print(f"Erro ao carregar {caminho_completo}: {e}")
+            print(f"[ERRO] {caminho}: {e}")
             return None
 
     def _add_painel_item(self, painel, img_path, texto, comando=None):
-        img = self._carregar_imagem(img_path, (50, 50))
-        frame_item = tk.Frame(painel, bg="#0B305A")
-        frame_item.pack(pady=10)
+        img = self._carregar_imagem(img_path, (55, 55))
+        f = tk.Frame(painel, bg="#0B305A")
+        f.pack(pady=12)
         if img:
-            lbl = tk.Label(frame_item, image=img, bg="#0B305A", cursor="hand2")
+            lbl = tk.Label(f, image=img, bg="#0B305A", cursor="hand2")
             lbl.image = img
             lbl.pack()
             if comando:
                 lbl.bind("<Button-1>", lambda e: comando())
-        tk.Label(frame_item, text=texto, bg="#0B305A", fg="white", font=("Arial", 11, "bold")).pack()
+        tk.Label(f, text=texto, bg="#0B305A", fg="white", font=("Arial", 12, "bold")).pack()
         if comando:
-            frame_item.bind("<Button-1>", lambda e: comando())
+            f.bind("<Button-1>", lambda e: comando())
 
     def _desenhar_gradiente(self, canvas, cor1, cor2):
         canvas.delete("gradiente")
-        largura = self.root.winfo_width()
-        altura = self.root.winfo_height()
+        largura = canvas.winfo_width()
+        altura = canvas.winfo_height()
         (r1, g1, b1) = self.root.winfo_rgb(cor1)
         (r2, g2, b2) = self.root.winfo_rgb(cor2)
-        r_ratio = float(r2 - r1) / altura
-        g_ratio = float(g2 - g1) / altura
-        b_ratio = float(b2 - b1) / altura
+        r_ratio = (r2 - r1) / altura
+        g_ratio = (g2 - g1) / altura
+        b_ratio = (b2 - b1) / altura
         for i in range(altura):
-            nr = int(r1 + (r_ratio * i))
-            ng = int(g1 + (g_ratio * i))
-            nb = int(b1 + (b_ratio * i))
-            cor = f'#{nr//256:02x}{ng//256:02x}{nb//256:02x}'
-            canvas.create_line(0, i, largura, i, tags=("gradiente",), fill=cor)
+            nr = int(r1 + r_ratio * i)
+            ng = int(g1 + g_ratio * i)
+            nb = int(b1 + b_ratio * i)
+            color = f'#{nr//256:02x}{ng//256:02x}{nb//256:02x}'
+            canvas.create_line(0, i, largura, i, tags="gradiente", fill=color)
 
     def _redesenhar_gradiente(self, event):
         self._desenhar_gradiente(self.canvas_bg, "#044793", "#0277BD")
 
-    # --- Integração dos fluxos com o backend ---
     def abrir_create_box(self):
         self._abrir_tela(CreateBoxScreen, api=self.api)
 
@@ -166,5 +240,5 @@ class HomeScreen:
         self._abrir_tela(SelectAltArqScreen, api=self.api)
 
     def _abrir_tela(self, TelaClasse, **kwargs):
-        nova_janela = tk.Toplevel(self.root)
-        TelaClasse(nova_janela, **kwargs)
+        nova = tk.Toplevel(self.root)
+        TelaClasse(nova, **kwargs)

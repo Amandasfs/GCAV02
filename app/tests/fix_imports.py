@@ -1,3 +1,4 @@
+# File: app/tests/fix_imports.py
 #!/usr/bin/env python3
 import os
 import shutil

@@ -1,3 +1,4 @@
+# app/routes/segurados.py
 from flask import Blueprint, request, jsonify
 from auth import requer_autenticacao
 from database.mongo_handler import MongoDBHandler

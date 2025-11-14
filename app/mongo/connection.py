@@ -1,3 +1,4 @@
+# app/mongo/connection.py
 import logging
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure, ServerSelectionTimeoutError

@@ -1,3 +1,4 @@
+# app/mongo/caixas_handler.py
 import logging
 from pymongo.errors import DuplicateKeyError
 from base_handler import BaseHandler

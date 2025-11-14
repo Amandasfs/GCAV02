@@ -1,3 +1,4 @@
+# app/handlers/segurados.py
 from datetime import datetime
 from .base import JSONBaseHandler
 

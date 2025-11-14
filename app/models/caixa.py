@@ -1,3 +1,4 @@
+# app/models/caixa.py
 from datetime import datetime
 
 class Caixa:

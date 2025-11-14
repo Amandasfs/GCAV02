@@ -1,3 +1,4 @@
+# File: app/main.py
 import tkinter as tk
 from gca_app import GCAApp
 
