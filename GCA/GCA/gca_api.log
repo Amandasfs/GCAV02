@@ -8542,3 +8542,877 @@
 2025-11-14 11:45:42,751 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
 2025-11-14 11:45:42,760 - werkzeug - WARNING -  * Debugger is active!
 2025-11-14 11:45:42,763 - werkzeug - INFO -  * Debugger PIN: 621-120-016
+2025-11-15 12:58:54,675 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-15 12:58:54,676 - __main__ - INFO - ✅ Flask
+2025-11-15 12:58:54,676 - __main__ - INFO - ✅ Flask-CORS
+2025-11-15 12:58:54,783 - __main__ - INFO - ✅ PyMongo
+2025-11-15 12:58:54,783 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-15 12:58:54,795 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-15 12:58:54,804 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-15 12:58:54,808 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-15 12:58:54,809 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-15 12:58:54,810 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-15 12:58:54,811 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-15 12:58:54,811 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-15 12:58:54,811 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-15 12:58:54,813 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-15 12:58:54,820 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-15 12:58:54,826 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-15 12:58:54,831 - __main__ - INFO - ✅ Caixas registrado
+2025-11-15 12:58:54,835 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-15 12:58:54,836 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-15 12:58:54,843 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-15 12:58:54,847 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-15 12:58:54,851 - __main__ - INFO - ✅ Segurados registrado
+2025-11-15 12:58:54,852 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-15 12:58:54,852 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-15 12:58:54,872 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.113:5000
+2025-11-15 12:58:54,872 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-15 12:58:54,873 - werkzeug - INFO -  * Restarting with stat
+2025-11-15 12:58:55,026 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-15 12:58:55,027 - __main__ - INFO - ✅ Flask
+2025-11-15 12:58:55,027 - __main__ - INFO - ✅ Flask-CORS
+2025-11-15 12:58:55,085 - __main__ - INFO - ✅ PyMongo
+2025-11-15 12:58:55,085 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-15 12:58:55,086 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-15 12:58:55,090 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-15 12:58:55,092 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-15 12:58:55,092 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-15 12:58:55,093 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-15 12:58:55,093 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-15 12:58:55,093 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-15 12:58:55,093 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-15 12:58:55,095 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-15 12:58:55,099 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-15 12:58:55,101 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-15 12:58:55,104 - __main__ - INFO - ✅ Caixas registrado
+2025-11-15 12:58:55,106 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-15 12:58:55,106 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-15 12:58:55,109 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-15 12:58:55,112 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-15 12:58:55,114 - __main__ - INFO - ✅ Segurados registrado
+2025-11-15 12:58:55,115 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-15 12:58:55,115 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-15 12:58:55,125 - werkzeug - WARNING -  * Debugger is active!
+2025-11-15 12:58:55,130 - werkzeug - INFO -  * Debugger PIN: 661-588-920
+2025-11-15 12:59:05,357 - werkzeug - INFO - 127.0.0.1 - - [15/Nov/2025 12:59:05] "GET /api/health HTTP/1.1" 200 -
+2025-11-15 12:59:05,361 - werkzeug - INFO - 127.0.0.1 - - [15/Nov/2025 12:59:05] "GET /api/info HTTP/1.1" 200 -
+2025-11-15 12:59:09,312 - werkzeug - INFO - 127.0.0.1 - - [15/Nov/2025 12:59:09] "GET /api/caixas HTTP/1.1" 200 -
+2025-11-15 12:59:09,317 - werkzeug - INFO - 127.0.0.1 - - [15/Nov/2025 12:59:09] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-15 12:59:09,344 - werkzeug - INFO - 127.0.0.1 - - [15/Nov/2025 12:59:09] "GET /api/segurados HTTP/1.1" 200 -
+2025-11-17 15:16:45,384 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 15:16:45,384 - __main__ - INFO - ✅ Flask
+2025-11-17 15:16:45,384 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 15:16:45,567 - __main__ - INFO - ✅ PyMongo
+2025-11-17 15:16:45,567 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 15:16:45,568 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:16:45,577 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:16:45,580 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:16:45,581 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 15:16:45,582 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 15:16:45,582 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 15:16:45,582 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 15:16:45,582 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 15:16:45,584 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:16:45,590 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:16:45,595 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:16:45,599 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 15:16:45,602 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 15:16:45,604 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:16:45,609 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:16:45,611 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:16:45,614 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 15:16:45,614 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 15:16:45,615 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 15:16:45,644 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.239.176:5000
+2025-11-17 15:16:45,645 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-17 15:16:45,647 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 15:16:45,857 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 15:16:45,857 - __main__ - INFO - ✅ Flask
+2025-11-17 15:16:45,857 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 15:16:45,934 - __main__ - INFO - ✅ PyMongo
+2025-11-17 15:16:45,935 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 15:16:45,935 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:16:45,940 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:16:45,943 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:16:45,943 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 15:16:45,944 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 15:16:45,944 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 15:16:45,944 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 15:16:45,944 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 15:16:45,945 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:16:45,954 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:16:45,957 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:16:45,961 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 15:16:45,965 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 15:16:45,966 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:16:45,973 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:16:45,977 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:16:45,979 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 15:16:45,980 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 15:16:45,980 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 15:16:45,991 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 15:16:46,010 - werkzeug - INFO -  * Debugger PIN: 806-213-971
+2025-11-17 15:17:00,554 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:00] "GET /api/health HTTP/1.1" 200 -
+2025-11-17 15:17:00,558 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:00] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 15:17:03,697 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:03] "GET /api/caixas HTTP/1.1" 200 -
+2025-11-17 15:17:03,702 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:03] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-17 15:17:03,731 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:03] "GET /api/segurados HTTP/1.1" 200 -
+2025-11-17 15:17:04,905 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:04] "GET /api/caixas HTTP/1.1" 200 -
+2025-11-17 15:17:11,515 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:11] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:17:13,383 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:13] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:17:13,599 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:13] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:17:13,743 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:13] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:17:13,895 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:13] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:17:15,101 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:15] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 15:17:16,006 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:16] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 15:17:20,561 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:20] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 15:17:30,563 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:30] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 15:17:40,566 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:40] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 15:17:50,567 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:50] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 15:17:54,478 - __main__ - INFO - 🔄 Dados atualizados via POST /api/refresh
+2025-11-17 15:17:54,478 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:54] "POST /api/refresh HTTP/1.1" 200 -
+2025-11-17 15:17:54,486 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:54] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 15:17:54,493 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:54] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-17 15:17:54,496 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:54] "GET /api/caixas HTTP/1.1" 200 -
+2025-11-17 15:17:54,500 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:54] "GET /api/segurados HTTP/1.1" 200 -
+2025-11-17 15:17:58,623 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:58] "[31m[1mPOST /api/segurados HTTP/1.1[0m" 400 -
+2025-11-17 15:17:59,118 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:59] "[31m[1mPOST /api/segurados HTTP/1.1[0m" 400 -
+2025-11-17 15:17:59,255 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:17:59] "[31m[1mPOST /api/segurados HTTP/1.1[0m" 400 -
+2025-11-17 15:19:19,739 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 15:19:19,739 - __main__ - INFO - ✅ Flask
+2025-11-17 15:19:19,739 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 15:19:19,884 - __main__ - INFO - ✅ PyMongo
+2025-11-17 15:19:19,884 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 15:19:19,885 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:19:19,892 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:19:19,893 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:19:19,894 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 15:19:19,894 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 15:19:19,895 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 15:19:19,895 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 15:19:19,895 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 15:19:19,896 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:19:19,900 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:19:19,902 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:19:19,904 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 15:19:19,906 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 15:19:19,907 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:19:19,912 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:19:19,915 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:19:19,918 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 15:19:19,919 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 15:19:19,919 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 15:19:19,939 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.239.176:5000
+2025-11-17 15:19:19,940 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-17 15:19:19,941 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 15:19:20,110 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 15:19:20,110 - __main__ - INFO - ✅ Flask
+2025-11-17 15:19:20,110 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 15:19:20,203 - __main__ - INFO - ✅ PyMongo
+2025-11-17 15:19:20,203 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 15:19:20,204 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:19:20,208 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:19:20,211 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:19:20,212 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 15:19:20,212 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 15:19:20,213 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 15:19:20,213 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 15:19:20,213 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 15:19:20,214 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:19:20,219 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:19:20,222 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:19:20,225 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 15:19:20,227 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 15:19:20,228 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:19:20,232 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:19:20,234 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:19:20,238 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 15:19:20,239 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 15:19:20,239 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 15:19:20,265 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 15:19:20,269 - werkzeug - INFO -  * Debugger PIN: 501-475-391
+2025-11-17 15:19:30,134 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:19:30] "GET /api/health HTTP/1.1" 200 -
+2025-11-17 15:19:30,138 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:19:30] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 15:19:33,710 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:19:33] "GET /api/caixas HTTP/1.1" 200 -
+2025-11-17 15:19:33,712 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:19:33] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-17 15:19:33,717 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:19:33] "GET /api/segurados HTTP/1.1" 200 -
+2025-11-17 15:19:40,762 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:19:40] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-17 15:19:45,832 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:19:45,848 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:19:45,851 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:19:45,860 - __main__ - INFO - 🔄 Dados atualizados via POST /api/arquivos
+2025-11-17 15:19:45,861 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:19:45] "[35m[1mPOST /api/arquivos HTTP/1.1[0m" 201 -
+2025-11-17 15:19:45,866 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:19:45] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-17 15:20:08,094 - werkzeug - INFO -  * Detected change in '/home/miller/Documentos/inss/GCAV02/GCA/GCA/app.py', reloading
+2025-11-17 15:20:08,422 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 15:20:08,803 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 15:20:08,804 - __main__ - INFO - ✅ Flask
+2025-11-17 15:20:08,804 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 15:20:08,926 - __main__ - INFO - ✅ PyMongo
+2025-11-17 15:20:08,926 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 15:20:08,927 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:20:08,933 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:20:08,935 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:20:08,936 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 15:20:08,937 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 15:20:08,937 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 15:20:08,937 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 15:20:08,937 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 15:20:08,939 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:20:08,944 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:20:08,946 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:20:08,949 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 15:20:08,951 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 15:20:08,952 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:20:08,959 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:20:08,963 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:20:08,966 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 15:20:08,966 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 15:20:08,966 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 15:20:08,984 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 15:20:08,991 - werkzeug - INFO -  * Debugger PIN: 501-475-391
+2025-11-17 15:20:10,309 - werkzeug - INFO -  * Detected change in '/home/miller/Documentos/inss/GCAV02/GCA/GCA/app.py', reloading
+2025-11-17 15:20:10,581 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 15:20:10,774 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 15:20:10,774 - __main__ - INFO - ✅ Flask
+2025-11-17 15:20:10,774 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 15:20:10,863 - __main__ - INFO - ✅ PyMongo
+2025-11-17 15:20:10,863 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 15:20:10,864 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:20:10,870 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:20:10,874 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:20:10,874 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 15:20:10,875 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 15:20:10,875 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 15:20:10,875 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 15:20:10,875 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 15:20:10,877 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:20:10,882 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:20:10,885 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:20:10,889 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 15:20:10,892 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 15:20:10,893 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:20:10,897 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:20:10,898 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:20:10,901 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 15:20:10,901 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 15:20:10,901 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 15:20:10,915 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 15:20:10,917 - werkzeug - INFO -  * Debugger PIN: 501-475-391
+2025-11-17 15:21:18,350 - werkzeug - INFO -  * Detected change in '/home/miller/Documentos/inss/GCAV02/GCA/GCA/app.py', reloading
+2025-11-17 15:21:18,551 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 15:21:18,867 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 15:21:18,867 - __main__ - INFO - ✅ Flask
+2025-11-17 15:21:18,867 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 15:21:19,039 - __main__ - INFO - ✅ PyMongo
+2025-11-17 15:21:19,040 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 15:21:19,040 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:21:19,048 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:21:19,052 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:21:19,053 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 15:21:19,054 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 15:21:19,055 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 15:21:19,055 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 15:21:19,055 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 15:21:19,057 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:21:19,064 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:21:19,067 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:21:19,073 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 15:21:19,077 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 15:21:19,079 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:21:19,085 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:21:19,090 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:21:19,097 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 15:21:19,097 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 15:21:19,097 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 15:21:19,132 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 15:21:19,143 - werkzeug - INFO -  * Debugger PIN: 501-475-391
+2025-11-17 15:21:21,923 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:21] "GET /api/health HTTP/1.1" 200 -
+2025-11-17 15:21:21,927 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:21] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 15:21:27,705 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:27] "GET /api/caixas HTTP/1.1" 200 -
+2025-11-17 15:21:27,710 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:27] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-17 15:21:27,732 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:27] "GET /api/segurados HTTP/1.1" 200 -
+2025-11-17 15:21:28,976 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:28] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-17 15:21:31,531 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:31] "GET /api/segurados HTTP/1.1" 200 -
+2025-11-17 15:21:32,516 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:32] "GET /api/segurados HTTP/1.1" 200 -
+2025-11-17 15:21:36,019 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:36] "[35m[1mDELETE /api/segurados/13223432 HTTP/1.1[0m" 500 -
+2025-11-17 15:21:36,633 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:36] "GET /api/segurados HTTP/1.1" 200 -
+2025-11-17 15:21:37,433 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:37] "GET /api/segurados HTTP/1.1" 200 -
+2025-11-17 15:21:38,288 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:38] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-17 15:21:39,257 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:39] "GET /api/caixas HTTP/1.1" 200 -
+2025-11-17 15:21:51,875 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:51] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:21:52,519 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:52] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:21:53,032 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:53] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:21:53,192 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:53] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:21:53,343 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:53] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:21:53,496 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:53] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:21:53,701 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:53] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:21:53,845 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:53] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:21:54,000 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:54] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:21:54,176 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:54] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:21:54,320 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:54] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:21:54,485 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:54] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:21:54,648 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:54] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:21:55,033 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:55] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:21:55,224 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:55] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:21:55,408 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:55] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:21:55,622 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:21:55] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 15:22:51,644 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 15:22:51,644 - __main__ - INFO - ✅ Flask
+2025-11-17 15:22:51,644 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 15:22:51,735 - __main__ - INFO - ✅ PyMongo
+2025-11-17 15:22:51,735 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 15:22:51,736 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:22:51,743 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:22:51,745 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:22:51,745 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 15:22:51,745 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 15:22:51,745 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 15:22:51,745 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 15:22:51,746 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 15:22:51,746 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:22:51,750 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:22:51,752 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:22:51,756 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 15:22:51,758 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 15:22:51,759 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:22:51,765 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:22:51,767 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:22:51,770 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 15:22:51,771 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 15:22:51,771 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 15:22:51,802 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.239.176:5000
+2025-11-17 15:22:51,802 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-17 15:22:51,802 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 15:22:51,964 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 15:22:51,964 - __main__ - INFO - ✅ Flask
+2025-11-17 15:22:51,964 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 15:22:52,043 - __main__ - INFO - ✅ PyMongo
+2025-11-17 15:22:52,043 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 15:22:52,044 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:22:52,048 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:22:52,051 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:22:52,052 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 15:22:52,052 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 15:22:52,053 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 15:22:52,053 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 15:22:52,053 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 15:22:52,054 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:22:52,059 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:22:52,060 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:22:52,063 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 15:22:52,066 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 15:22:52,066 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 15:22:52,069 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 15:22:52,071 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 15:22:52,074 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 15:22:52,074 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 15:22:52,074 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 15:22:52,092 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 15:22:52,097 - werkzeug - INFO -  * Debugger PIN: 501-475-391
+2025-11-17 15:22:56,289 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:22:56] "GET / HTTP/1.1" 200 -
+2025-11-17 15:22:56,361 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 15:22:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-17 16:14:15,513 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 16:14:15,522 - __main__ - INFO - ✅ Flask
+2025-11-17 16:14:15,522 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 16:14:15,591 - __main__ - INFO - ✅ PyMongo
+2025-11-17 16:14:15,591 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 16:14:15,592 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:14:15,595 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:14:15,598 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:14:15,598 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 16:14:15,599 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 16:14:15,599 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 16:14:15,599 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 16:14:15,599 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 16:14:15,600 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:14:15,604 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:14:15,606 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:14:15,608 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 16:14:15,609 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 16:14:15,610 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:14:15,613 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:14:15,615 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:14:15,617 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 16:14:15,617 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 16:14:15,617 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 16:14:15,631 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.239.176:5000
+2025-11-17 16:14:15,631 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-17 16:14:15,632 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 16:14:15,796 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 16:14:15,796 - __main__ - INFO - ✅ Flask
+2025-11-17 16:14:15,796 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 16:14:15,887 - __main__ - INFO - ✅ PyMongo
+2025-11-17 16:14:15,887 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 16:14:15,887 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:14:15,891 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:14:15,893 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:14:15,893 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 16:14:15,894 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 16:14:15,894 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 16:14:15,894 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 16:14:15,894 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 16:14:15,895 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:14:15,900 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:14:15,903 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:14:15,906 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 16:14:15,908 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 16:14:15,909 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:14:15,912 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:14:15,915 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:14:15,918 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 16:14:15,919 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 16:14:15,919 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 16:14:15,934 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 16:14:15,937 - werkzeug - INFO -  * Debugger PIN: 132-045-937
+2025-11-17 16:14:36,686 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:14:36] "GET /api/health HTTP/1.1" 200 -
+2025-11-17 16:14:36,689 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:14:36] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 16:14:44,275 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:14:44] "GET /api/caixas HTTP/1.1" 200 -
+2025-11-17 16:14:44,278 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:14:44] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-17 16:14:44,283 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:14:44] "GET /api/segurados HTTP/1.1" 200 -
+2025-11-17 16:14:45,422 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:14:45] "GET /api/caixas HTTP/1.1" 200 -
+2025-11-17 16:14:51,233 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:14:51] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:14:53,878 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:14:53] "GET /api/caixas HTTP/1.1" 200 -
+2025-11-17 16:14:55,013 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:14:55] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 16:14:56,316 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:14:56] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 16:14:56,692 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:14:56] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 16:15:00,304 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:15:00] "GET /api/caixas HTTP/1.1" 200 -
+2025-11-17 16:15:01,317 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:15:01] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-17 16:15:02,656 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:15:02] "GET /api/segurados HTTP/1.1" 200 -
+2025-11-17 16:18:23,903 - werkzeug - INFO -  * Detected change in '/home/miller/Documentos/inss/GCAV02/GCA/GCA/app.py', reloading
+2025-11-17 16:18:24,234 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 16:18:24,377 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 16:18:24,377 - __main__ - INFO - ✅ Flask
+2025-11-17 16:18:24,377 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 16:18:24,446 - __main__ - INFO - ✅ PyMongo
+2025-11-17 16:18:24,446 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 16:18:24,447 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:18:24,450 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:18:24,452 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:18:24,452 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 16:18:24,452 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 16:18:24,452 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 16:18:24,453 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 16:18:24,453 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 16:18:24,453 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:18:24,458 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:18:24,459 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:18:24,461 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 16:18:24,462 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 16:18:24,462 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:18:24,465 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:18:24,467 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:18:24,470 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 16:18:24,470 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 16:18:24,470 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 16:18:24,480 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 16:18:24,482 - werkzeug - INFO -  * Debugger PIN: 132-045-937
+2025-11-17 16:18:28,002 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:18:28] "GET /api/health HTTP/1.1" 200 -
+2025-11-17 16:18:28,005 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:18:28] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 16:18:31,029 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:18:31] "GET /api/caixas HTTP/1.1" 200 -
+2025-11-17 16:18:41,733 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:18:41] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:18:42,069 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:18:42] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:18:42,206 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:18:42] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:18:42,371 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:18:42] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:18:42,687 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:18:42] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:19:27,943 - werkzeug - INFO -  * Detected change in '/home/miller/Documentos/inss/GCAV02/GCA/GCA/routes/arquivos.py', reloading
+2025-11-17 16:19:28,092 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 16:19:28,215 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 16:19:28,215 - __main__ - INFO - ✅ Flask
+2025-11-17 16:19:28,215 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 16:19:28,276 - __main__ - INFO - ✅ PyMongo
+2025-11-17 16:19:28,276 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 16:19:28,277 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:19:28,281 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:19:28,282 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:19:28,282 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 16:19:28,283 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 16:19:28,283 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 16:19:28,283 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 16:19:28,283 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 16:19:28,284 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:19:28,287 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:19:28,290 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:19:28,292 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 16:19:28,295 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 16:19:28,295 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:19:28,300 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:19:28,304 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:19:28,307 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 16:19:28,308 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 16:19:28,308 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 16:19:28,326 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 16:19:28,330 - werkzeug - INFO -  * Debugger PIN: 132-045-937
+2025-11-17 16:19:35,874 - werkzeug - INFO -  * Detected change in '/home/miller/Documentos/inss/GCAV02/GCA/GCA/routes/caixas.py', reloading
+2025-11-17 16:19:36,397 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 16:19:36,533 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 16:19:36,533 - __main__ - INFO - ✅ Flask
+2025-11-17 16:19:36,533 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 16:19:36,594 - __main__ - INFO - ✅ PyMongo
+2025-11-17 16:19:36,594 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 16:19:36,594 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:19:36,598 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:19:36,599 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:19:36,600 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 16:19:36,600 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 16:19:36,600 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 16:19:36,600 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 16:19:36,601 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 16:19:36,603 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:19:36,607 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:19:36,608 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:19:36,610 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 16:19:36,611 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 16:19:36,612 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:19:36,614 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:19:36,615 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:19:36,617 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 16:19:36,617 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 16:19:36,618 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 16:19:36,628 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 16:19:36,631 - werkzeug - INFO -  * Debugger PIN: 132-045-937
+2025-11-17 16:19:47,333 - werkzeug - INFO -  * Detected change in '/home/miller/Documentos/inss/GCAV02/GCA/GCA/routes/segurados.py', reloading
+2025-11-17 16:19:47,694 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 16:19:47,846 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 16:19:47,846 - __main__ - INFO - ✅ Flask
+2025-11-17 16:19:47,846 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 16:19:47,934 - __main__ - INFO - ✅ PyMongo
+2025-11-17 16:19:47,935 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 16:19:47,936 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:19:47,940 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:19:47,942 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:19:47,943 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 16:19:47,943 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 16:19:47,943 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 16:19:47,943 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 16:19:47,943 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 16:19:47,944 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:19:47,948 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:19:47,949 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:19:47,951 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 16:19:47,953 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 16:19:47,955 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:19:47,958 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:19:47,959 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:19:47,961 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 16:19:47,961 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 16:19:47,961 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 16:19:47,988 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 16:19:47,992 - werkzeug - INFO -  * Debugger PIN: 132-045-937
+2025-11-17 16:20:13,252 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:20:13] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-17 16:20:14,617 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:20:14] "GET /api/segurados HTTP/1.1" 200 -
+2025-11-17 16:20:16,532 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:20:16] "GET /api/caixas HTTP/1.1" 200 -
+2025-11-17 16:20:16,534 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:20:16] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-17 16:20:16,537 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:20:16] "GET /api/segurados HTTP/1.1" 200 -
+2025-11-17 16:20:18,033 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:20:18] "GET /api/caixas HTTP/1.1" 200 -
+2025-11-17 16:20:19,143 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:20:19] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:20:19,495 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:20:19] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:20:19,837 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:20:19] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:20:20,179 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:20:20] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:20:20,376 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:20:20] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:26:31,785 - werkzeug - INFO -  * Detected change in '/home/miller/Documentos/inss/GCAV02/GCA/GCA/app.py', reloading
+2025-11-17 16:26:32,189 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 16:26:32,326 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 16:26:32,326 - __main__ - INFO - ✅ Flask
+2025-11-17 16:26:32,326 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 16:26:32,399 - __main__ - INFO - ✅ PyMongo
+2025-11-17 16:26:32,399 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 16:26:32,399 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:26:32,403 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:26:32,404 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:26:32,404 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 16:26:32,405 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 16:26:32,405 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 16:26:32,405 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 16:26:32,405 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 16:26:32,406 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:26:32,408 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:26:32,410 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:26:32,412 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 16:26:32,414 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 16:26:32,414 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:26:32,417 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:26:32,418 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:26:32,420 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 16:26:32,420 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 16:26:32,420 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 16:26:32,432 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 16:26:32,435 - werkzeug - INFO -  * Debugger PIN: 132-045-937
+2025-11-17 16:26:49,660 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:26:49] "GET /api/health HTTP/1.1" 200 -
+2025-11-17 16:26:49,663 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:26:49] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 16:26:54,401 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:26:54] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 16:26:59,666 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:26:59] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 16:27:09,664 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:27:09] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 16:27:34,020 - werkzeug - INFO -  * Detected change in '/home/miller/Documentos/inss/GCAV02/GCA/GCA/app.py', reloading
+2025-11-17 16:27:34,532 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 16:27:34,727 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 16:27:34,727 - __main__ - INFO - ✅ Flask
+2025-11-17 16:27:34,727 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 16:27:34,840 - __main__ - INFO - ✅ PyMongo
+2025-11-17 16:27:34,840 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 16:27:34,840 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:27:34,845 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:27:34,847 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:27:34,847 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 16:27:34,848 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 16:27:34,848 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 16:27:34,848 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 16:27:34,849 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 16:27:34,849 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:27:34,852 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:27:34,854 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:27:34,857 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 16:27:34,858 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 16:27:34,859 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:27:34,862 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:27:34,863 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:27:34,865 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 16:27:34,865 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 16:27:34,865 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 16:27:34,881 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 16:27:34,886 - werkzeug - INFO -  * Debugger PIN: 132-045-937
+2025-11-17 16:27:37,142 - werkzeug - INFO -  * Detected change in '/home/miller/Documentos/inss/GCAV02/GCA/GCA/app.py', reloading
+2025-11-17 16:27:37,440 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 16:27:37,570 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 16:27:37,570 - __main__ - INFO - ✅ Flask
+2025-11-17 16:27:37,570 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 16:27:37,634 - __main__ - INFO - ✅ PyMongo
+2025-11-17 16:27:37,634 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 16:27:37,634 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:27:37,638 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:27:37,639 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:27:37,639 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 16:27:37,640 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 16:27:37,640 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 16:27:37,640 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 16:27:37,640 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 16:27:37,640 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:27:37,643 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:27:37,644 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:27:37,646 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 16:27:37,647 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 16:27:37,648 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:27:37,650 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:27:37,653 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:27:37,655 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 16:27:37,655 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 16:27:37,655 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 16:27:37,663 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 16:27:37,665 - werkzeug - INFO -  * Debugger PIN: 132-045-937
+2025-11-17 16:27:45,607 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:27:45] "GET /api/health HTTP/1.1" 200 -
+2025-11-17 16:27:45,610 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:27:45] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 16:28:24,752 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 16:28:24,753 - __main__ - INFO - ✅ Flask
+2025-11-17 16:28:24,753 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 16:28:24,815 - __main__ - INFO - ✅ PyMongo
+2025-11-17 16:28:24,815 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 16:28:24,815 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:28:24,820 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:28:24,822 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:28:24,822 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 16:28:24,822 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 16:28:24,822 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 16:28:24,822 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 16:28:24,822 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 16:28:24,823 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:28:24,827 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:28:24,828 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:28:24,830 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 16:28:24,831 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 16:28:24,831 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:28:24,835 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:28:24,836 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:28:24,839 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 16:28:24,839 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 16:28:24,839 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 16:28:24,851 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.239.176:5000
+2025-11-17 16:28:24,851 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-17 16:28:24,852 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 16:28:24,965 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 16:28:24,965 - __main__ - INFO - ✅ Flask
+2025-11-17 16:28:24,965 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 16:28:25,027 - __main__ - INFO - ✅ PyMongo
+2025-11-17 16:28:25,027 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 16:28:25,027 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:28:25,031 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:28:25,032 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:28:25,032 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 16:28:25,032 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 16:28:25,032 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 16:28:25,032 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 16:28:25,033 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 16:28:25,033 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:28:25,037 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:28:25,039 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:28:25,041 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 16:28:25,042 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 16:28:25,042 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:28:25,044 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:28:25,047 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:28:25,049 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 16:28:25,049 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 16:28:25,049 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 16:28:25,058 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 16:28:25,060 - werkzeug - INFO -  * Debugger PIN: 132-045-937
+2025-11-17 16:28:26,713 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:26] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 16:28:27,174 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:27] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 16:28:33,290 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:33] "GET /api/caixas HTTP/1.1" 200 -
+2025-11-17 16:28:33,295 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:33] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-17 16:28:33,303 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:33] "GET /api/segurados HTTP/1.1" 200 -
+2025-11-17 16:28:34,188 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:34] "GET /api/caixas HTTP/1.1" 200 -
+2025-11-17 16:28:39,928 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:39] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:28:40,363 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:40] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:28:40,512 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:40] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:28:40,818 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:40] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:28:41,138 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:41] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:28:41,281 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:41] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:28:41,561 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:41] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:28:41,737 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:41] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:28:41,878 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:41] "[31m[1mPOST /api/caixas HTTP/1.1[0m" 400 -
+2025-11-17 16:28:43,549 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:43] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-17 16:28:48,044 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:28:48,064 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:28:48,068 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:28:48,071 - __main__ - INFO - 🔄 Dados atualizados via POST /api/arquivos
+2025-11-17 16:28:48,071 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:48] "[35m[1mPOST /api/arquivos HTTP/1.1[0m" 201 -
+2025-11-17 16:28:48,077 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:48] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-17 16:28:51,363 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:51] "[31m[1mDELETE /api/arquivos/1111 HTTP/1.1[0m" 405 -
+2025-11-17 16:28:52,173 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:52] "GET /api/arquivos HTTP/1.1" 200 -
+2025-11-17 16:28:53,189 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:28:53] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 16:28:58,975 - werkzeug - INFO -  * Detected change in '/home/miller/Documentos/inss/GCAV02/GCA/GCA/app.py', reloading
+2025-11-17 16:28:59,131 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 16:28:59,242 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 16:28:59,242 - __main__ - INFO - ✅ Flask
+2025-11-17 16:28:59,242 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 16:28:59,302 - __main__ - INFO - ✅ PyMongo
+2025-11-17 16:28:59,302 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 16:28:59,302 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:28:59,306 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:28:59,307 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:28:59,307 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 16:28:59,308 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 16:28:59,308 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 16:28:59,308 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 16:28:59,308 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 16:28:59,309 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:28:59,313 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:28:59,315 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:28:59,316 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 16:28:59,318 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 16:28:59,318 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:28:59,320 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:28:59,322 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:28:59,324 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 16:28:59,325 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 16:28:59,325 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 16:28:59,335 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 16:28:59,337 - werkzeug - INFO -  * Debugger PIN: 132-045-937
+2025-11-17 16:29:57,839 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:29:57] "GET /api/health HTTP/1.1" 200 -
+2025-11-17 16:29:57,842 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:29:57] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 16:30:04,581 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:30:04] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 16:30:07,845 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:30:07] "GET /api/info HTTP/1.1" 200 -
+2025-11-17 16:31:12,822 - werkzeug - INFO -  * Detected change in '/home/miller/Documentos/inss/GCAV02/GCA/GCA/app.py', reloading
+2025-11-17 16:31:13,051 - werkzeug - INFO -  * Restarting with stat
+2025-11-17 16:31:13,209 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-17 16:31:13,209 - __main__ - INFO - ✅ Flask
+2025-11-17 16:31:13,209 - __main__ - INFO - ✅ Flask-CORS
+2025-11-17 16:31:13,284 - __main__ - INFO - ✅ PyMongo
+2025-11-17 16:31:13,284 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-17 16:31:13,285 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:31:13,289 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:31:13,291 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:31:13,291 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-17 16:31:13,292 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-17 16:31:13,292 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-17 16:31:13,292 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-17 16:31:13,292 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-17 16:31:13,293 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:31:13,296 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:31:13,298 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:31:13,301 - __main__ - INFO - ✅ Caixas registrado
+2025-11-17 16:31:13,303 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-17 16:31:13,303 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-17 16:31:13,306 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-17 16:31:13,307 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-17 16:31:13,309 - __main__ - INFO - ✅ Segurados registrado
+2025-11-17 16:31:13,309 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-17 16:31:13,309 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-17 16:31:13,322 - werkzeug - WARNING -  * Debugger is active!
+2025-11-17 16:31:13,324 - werkzeug - INFO -  * Debugger PIN: 132-045-937
+2025-11-17 16:31:16,437 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:31:16] "GET /api/health HTTP/1.1" 200 -
+2025-11-17 16:31:16,440 - werkzeug - INFO - 127.0.0.1 - - [17/Nov/2025 16:31:16] "GET /api/info HTTP/1.1" 200 -
+2025-11-18 10:44:18,876 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-18 10:44:18,877 - __main__ - INFO - ✅ Flask
+2025-11-18 10:44:18,877 - __main__ - INFO - ✅ Flask-CORS
+2025-11-18 10:44:19,003 - __main__ - INFO - ✅ PyMongo
+2025-11-18 10:44:19,003 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-18 10:44:19,005 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-18 10:44:19,035 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-18 10:44:19,039 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-18 10:44:19,040 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-18 10:44:19,041 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-18 10:44:19,041 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-18 10:44:19,041 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-18 10:44:19,042 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-18 10:44:19,046 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-18 10:44:19,051 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-18 10:44:19,055 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-18 10:44:19,059 - __main__ - INFO - ✅ Caixas registrado
+2025-11-18 10:44:19,061 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-18 10:44:19,062 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-18 10:44:19,068 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-18 10:44:19,071 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-18 10:44:19,074 - __main__ - INFO - ✅ Segurados registrado
+2025-11-18 10:44:19,075 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-18 10:44:19,075 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-18 10:44:19,101 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.239.176:5000
+2025-11-18 10:44:19,102 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-18 10:44:19,103 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 10:44:19,271 - __main__ - INFO - 🔍 Verificando dependências...
+2025-11-18 10:44:19,271 - __main__ - INFO - ✅ Flask
+2025-11-18 10:44:19,271 - __main__ - INFO - ✅ Flask-CORS
+2025-11-18 10:44:19,357 - __main__ - INFO - ✅ PyMongo
+2025-11-18 10:44:19,357 - __main__ - INFO - 💾 Inicializando conexões de banco de dados...
+2025-11-18 10:44:19,358 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-18 10:44:19,364 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-18 10:44:19,366 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-18 10:44:19,366 - __main__ - INFO - ✅ MongoDB conectado com sucesso
+2025-11-18 10:44:19,367 - __main__ - INFO - ✅ JSON Handler inicializado
+2025-11-18 10:44:19,367 - __main__ - INFO - 📊 Estatísticas iniciais JSON: {'total_caixas': 0, 'total_arquivos': 1, 'total_segurados': 0, 'ultima_atualizacao': '2025-11-14T11:42:54.030013'}
+2025-11-18 10:44:19,367 - __main__ - INFO - ✅ Banco de dados inicializado com sucesso
+2025-11-18 10:44:19,367 - __main__ - INFO - 🔄 Registrando blueprints...
+2025-11-18 10:44:19,369 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-18 10:44:19,376 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-18 10:44:19,378 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-18 10:44:19,381 - __main__ - INFO - ✅ Caixas registrado
+2025-11-18 10:44:19,383 - __main__ - INFO - ✅ Arquivos registrado
+2025-11-18 10:44:19,384 - database.mongo_handler - INFO - 🔗 Tentando conectar ao MongoDB...
+2025-11-18 10:44:19,388 - database.mongo_handler - INFO - ✅ MongoDB conectado com sucesso!
+2025-11-18 10:44:19,391 - database.mongo_handler - INFO - ✅ Índices do MongoDB criados/verificados
+2025-11-18 10:44:19,396 - __main__ - INFO - ✅ Segurados registrado
+2025-11-18 10:44:19,396 - __main__ - ERROR - ❌ Relatórios: No module named 'routes.relatorios'
+2025-11-18 10:44:19,396 - __main__ - INFO - 🎉 Aplicação inicializada com sucesso!
+2025-11-18 10:44:19,411 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 10:44:19,422 - werkzeug - INFO -  * Debugger PIN: 139-470-335
